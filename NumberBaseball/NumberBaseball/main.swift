@@ -82,9 +82,6 @@ func startGame() {
         ball = strikeAndBall - strike
     }
     
-    
-    
-    
     //MARK:- 실질적인 게임 진행 과정
     for gameCount in 1...9 {
         throwBall()
@@ -104,7 +101,11 @@ func startGame() {
             print("컴퓨터 승리...!")
         }
     }
+
+    
 }
 
+
 startGame()
+
 
