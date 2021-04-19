@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         expoDuration.text = expoData?.duration
         expoDescription.text = expoData?.description
         buttonLeftImage.image = UIImage(named: "flag")
-        buttonRightImage.image = UIImage(named: "flag")
+        buttonRightImage.image = buttonLeftImage.image
     }
     
     override func viewDidLoad() {
