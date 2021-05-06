@@ -102,6 +102,27 @@ class Bank {
     class Customer {
         let waitingNumber: Int
 
+        enum Priority: CaseIterable {
+            case vvip
+            case vip
+            case ip
+
+            var description: String {
+                switch self {
+                case .vvip:
+                    return "VVIP"
+                case .vip:
+                    return "VIP"
+                case .ip:
+                    return "일반"
+                }
+            }
+
+            static func random() -> Priority? {
+                return Priority.allCases.randomElement()
+            }
+        }
+
         init(waitingNumber: Int) {
             self.waitingNumber = waitingNumber + 1
         }
