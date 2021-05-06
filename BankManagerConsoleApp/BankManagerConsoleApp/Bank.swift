@@ -12,6 +12,33 @@ class Bank {
     let customerQueue: CustomerQueue = CustomerQueue(name: "고객 대기열")
     let notificationBoard: NotificationBoard = NotificationBoard()
 
+    enum Banking: CaseIterable {
+        case deposit
+        case loan
+
+        var taskTime: TimeInterval {
+            switch self {
+            case .deposit:
+                return 0.7
+            case .loan:
+                return 1.1
+            }
+        }
+
+        var description: String {
+            switch self {
+            case .deposit:
+                return "예금"
+            case .loan:
+                return "대출"
+            }
+        }
+
+        static func random() -> Banking? {
+            return Banking.allCases.randomElement()
+        }
+    }
+
     class NotificationBoard {
         private(set) var observers: [CustomerQueue] = []
 
