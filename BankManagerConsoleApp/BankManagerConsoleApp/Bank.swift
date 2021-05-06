@@ -101,6 +101,8 @@ class Bank {
 
     class Customer {
         let waitingNumber: Int
+        let priority: Priority?
+        let banking: Banking?
 
         enum Priority: CaseIterable {
             case vvip
@@ -123,8 +125,10 @@ class Bank {
             }
         }
 
-        init(waitingNumber: Int) {
+        init(waitingNumber: Int, priority: Priority?, banking: Banking?) {
             self.waitingNumber = waitingNumber + 1
+            self.priority = priority
+            self.banking = banking
         }
 
         func go(to teller: Teller, sender notificationBoard: NotificationBoard) {

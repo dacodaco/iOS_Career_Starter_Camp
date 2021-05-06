@@ -26,7 +26,9 @@ class BankController {
 
     func receiveCustomer(number: Int) {
         for _ in 0..<number {
-            bank.customerQueue.enqueue(Bank.Customer(waitingNumber: customerWaitingCount))
+            bank.customerQueue.enqueue(Bank.Customer(waitingNumber: customerWaitingCount,
+                                                     priority: Bank.Customer.Priority.random(),
+                                                     banking: Bank.Banking.random()))
             customerWaitingCount += 1
         }
     }
