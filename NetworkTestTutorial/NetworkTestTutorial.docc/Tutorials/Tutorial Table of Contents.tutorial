@@ -12,7 +12,8 @@
         Swift에서 클라이언트와 서버가 서로 소통하는 방법에 대해 간략하게 배웁니다. 
         
         @Image(source: communication.jpg, alt: "")
-        @TutorialReference(tutorial: "doc:NetworkingWithURLSession")
+        @TutorialReference(tutorial: "doc:ConfigureFilesForAPI")
+        @TutorialReference(tutorial: "doc:MakeModelType")
     }
     
     @Chapter(name: "How To Test My Code") {

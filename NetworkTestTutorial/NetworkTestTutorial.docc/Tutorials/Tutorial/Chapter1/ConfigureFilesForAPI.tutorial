@@ -1,9 +1,9 @@
 @Tutorial(time: 20) {
-    @Intro(title: "Configure default files for communication") {
+    @Intro(title: "Configure files for API") {
         Configuring default files for networking is essential for communication between servers and clients.
     }
     
-    @Section(title: "Make files for Networking") {
+    @Section(title: "Make JokesAPI class") {
         @ContentAndMedia(layout: horizontal) {
         To communicate with the server, you must send a request to the server in a prescribed format. In addition, the model type must be configured to store the data received from the server.
         }
@@ -128,13 +128,13 @@
             @Step {
                 Back to JokesAPI.swift file
                 
-                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step14.swift")
+                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section2-Step3.swift")
             }
             
             @Step {
                 Modify to allow completion closure in JokesAPI's fetchRandomJoke method to return APIError type.
                 
-                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section2-Step3.swift")
+                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section2-Step4.swift")
             }
         }
     }
