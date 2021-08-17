@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct JokeReponse: Decodable {
+struct JokeResponse: Decodable {
     let type: String
     let value: Joke
 }

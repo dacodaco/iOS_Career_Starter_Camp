@@ -25,7 +25,7 @@ class JokesAPIProvider {
         self.session = session
     }
     
-    func fetchRandomJoke(completion: @escaping(Result<Joke, APIError>) -> Void) {
+    func fetchRandomJoke() -> Void) {
         let request = URLRequest(url: JokesAPI.url)
 
         let task: URLSessionDataTask = session.dataTask(with: request) {}

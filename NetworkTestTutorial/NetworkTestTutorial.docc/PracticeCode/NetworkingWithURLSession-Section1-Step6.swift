@@ -25,5 +25,5 @@ class JokesAPIProvider {
         self.session = session
     }
     
-    func fetchRandomJoke(completion: @escaping(Result<Joke, APIError>) -> Void) {}
+    func fetchRandomJoke() {}
 }

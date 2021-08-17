@@ -42,51 +42,65 @@
             }
             
             @Step {
-                This method receives and handles data from the server and passes the result to the completion closure with Result type Instance which has associated value.
+                This method receives data from the server
                 
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step6.swift")
             }
             
             @Step {
-                Create and allocate sample data to ensure that the JSON file to be imported from the server is properly decoded.
+                Creates a 'request' constant for requesting to the server.
+
+                Use 'URLRequest(url:)' because the server uses GET requests only. We take advantage of the 'url' static variable in JokesAPI.
                 
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step7.swift")
             }
             
             @Step {
-                placeHolder
+                Generates a task constant(URLSessionDataTask class) that actually sends requests to the server.
                 
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step8.swift")
             }
             
             @Step {
-                placeHolder
-                
+                Define the completion closure of the URLSessionDataTask. The arguments that enter the closure are the values passed from the server.
+
+
+                The closure corresponding to the completion has the following parameters of types: such as 'Data?', 'HTTPURLResponse?', and 'Error?'
+                                
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step9.swift")
             }
             
             @Step {
-                placeHolder
+                First, make sure that the 'error' parameter that you received have values.
+                If there is a value, it means that an error has occurred.
                 
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step10.swift")
             }
             
             @Step {
-                placeHolder
+                Second, make sure that 'response' is the HTTPURLResponse type. If that type is correct, check if the status code is from 200 to 299.
                 
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step11.swift")
             }
             
             @Step {
-                placeHolder
+                Third, make sure 'data' has a value, and decode the data to the JokeResponse type.
                 
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step12.swift")
             }
             
             @Step {
-                placeHolder
+                As a result, we can check for errors or receive decoded information through this method. To deal with these results, we will make the 'fetchRandomJoke()' method have a completion closure.
+                
+                At this point, the completion closure sets the Result type to be received as a parameter to handle both errors and data.
                 
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step13.swift")
+            }
+            
+            @Step {
+                For each situation, determine whether the result is 'success' or 'failure' and pass it to the completion.
+                
+                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step14.swift")
             }
         }
     }

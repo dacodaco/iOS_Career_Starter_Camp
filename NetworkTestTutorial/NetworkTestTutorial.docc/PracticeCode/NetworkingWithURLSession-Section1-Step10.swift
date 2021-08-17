@@ -25,12 +25,13 @@ class JokesAPIProvider {
         self.session = session
     }
     
-    func fetchRandomJoke(completion: @escaping(Result<Joke, APIError>) -> Void) {
+    func fetchRandomJoke() {
         let request = URLRequest(url: JokesAPI.url)
         
         let task: URLSessionDataTask = session.dataTask(with: request) { data, response, error in
             if let error = error {
-                completion(.failure(.unknownError))
+                print("에러입니다.")
+                return
             }
         }
         
