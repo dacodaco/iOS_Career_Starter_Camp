@@ -1,13 +1,14 @@
 @Tutorial(time: <#number#>) {
-    @Intro(title: "<#text#>") {
-        <#text#>
+    @Intro(title: "통신을 위한 기본 파일 구성하기") {
+        통신을 위한 기본 파일 구성하기
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
     @Section(title: "<#text#>") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+        서버와 통신하려면, 정해진 방식으로 서버에 요청(Request)을 보내야 합니다. 
+        또한, 서버에서 받아온 데이터를 저장하기 위해 Model 타입을 구성해두어야 합니다.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
