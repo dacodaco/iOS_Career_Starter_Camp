@@ -19,13 +19,13 @@
         일반적으로 네트워크 과정을 확인하는 방법을 배웁니다.
         
         @Image(source: networking.jpg, alt: "")
-        @TutorialReference(tutorial: "HowToTestMyCode")
+        @TutorialReference(tutorial: "doc:HowToTestMyCode")
     }
     
     @Chapter(name: "Test Without Networking") {
         네트워크와 무관한 테스트를 진행하는 방법을 확인합니다.
         
         @Image(source: mock.jpg, alt: "")
-        @TutorialReference(tutorial: "TestWithoutNetworking")
+        @TutorialReference(tutorial: "doc:TestWithoutNetworking")
     }
 }
