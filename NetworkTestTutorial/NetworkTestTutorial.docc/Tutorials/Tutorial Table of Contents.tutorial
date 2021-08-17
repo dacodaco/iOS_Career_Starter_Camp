@@ -1,0 +1,31 @@
+@Tutorials(name: "") {
+    @Intro(title: "Test without Networking") {
+        URLSession을 활용해 네트워크 작업을 진행하다보면 예상치 못한 상황에 직면하는 경우가 있습니다.
+        예를 들어 우리가 서버와 소통하는 과정에서 오류가 발생했다고 생각해봅시다.
+        우리는 그 문제의 원인이 서버에 있는 것인지, 내가 처리하는 방식에 있는 것인지 알 수 없을 것입니다.
+        이와 같은 문제를 해결하기 위해서 우리는 네트워크와 무관하게 우리의 코드를 테스트하는 방법을 고민해볼 필요가 있습니다.
+        
+        @Image(source: yagom.jpg, alt: "")
+    }
+    
+    @Chapter(name: "Networking with URLSession") {
+        Swift에서 클라이언트와 서버가 서로 소통하는 방법에 대해 간략하게 배웁니다. 
+        
+        @Image(source: communication.jpg, alt: "")
+        @TutorialReference(tutorial: "doc:NetworkingWithURLSession")
+    }
+    
+    @Chapter(name: "How To Test My Code") {
+        일반적으로 네트워크 과정을 확인하는 방법을 배웁니다.
+        
+        @Image(source: networking.jpg, alt: "")
+        @TutorialReference(tutorial: "HowToTestMyCode")
+    }
+    
+    @Chapter(name: "Test Without Networking") {
+        네트워크와 무관한 테스트를 진행하는 방법을 확인합니다.
+        
+        @Image(source: mock.jpg, alt: "")
+        @TutorialReference(tutorial: "TestWithoutNetworking")
+    }
+}
