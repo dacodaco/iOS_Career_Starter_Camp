@@ -100,7 +100,41 @@
             @Step {
                 For each situation, determine whether the result is 'success' or 'failure' and pass it to the completion.
                 
+                Since the error type has not been made yet, it does not specify the type of error.
+                
                 @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step14.swift")
+            }
+        }
+    }
+        
+    @Section(title: "Make ErrorType") {
+        @ContentAndMedia(layout: horizontal) {
+            In the event of an error, it is important to distinguish each error and create an error type for different handling.
+        }
+        
+        @Steps {
+            @Step {
+                First, create a APIError enum type
+                
+                @Code(name: "APIError.swift", file: "NetworkingWithURLSession-Section2-Step1.swift")
+            }
+            
+            @Step {
+                Create an error case for each situation.
+                
+                @Code(name: "APIError.swift", file: "NetworkingWithURLSession-Section2-Step2.swift")
+            }
+            
+            @Step {
+                Back to JokesAPI.swift file
+                
+                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section1-Step14.swift")
+            }
+            
+            @Step {
+                Modify to allow completion closure in JokesAPI's fetchRandomJoke method to return APIError type.
+                
+                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-Section2-Step3.swift")
             }
         }
     }

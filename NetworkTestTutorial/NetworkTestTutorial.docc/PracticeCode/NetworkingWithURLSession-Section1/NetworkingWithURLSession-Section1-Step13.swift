@@ -25,28 +25,28 @@ class JokesAPIProvider {
         self.session = session
     }
     
-    func fetchRandomJoke(completion: @escaping (Result<JokeResponse, APIError>) -> Void) {
+    func fetchRandomJoke(completion: @escaping (Result<JokeResponse, Error>) -> Void) {
         let request = URLRequest(url: JokesAPI.url)
         
         let task: URLSessionDataTask = session.dataTask(with: request) { data, response, error in
             if let error = error {
-                completion(.failure(.unknown))
+                print("에러입니다.")
                 return
             }
             
             guard let response = response as? HTTPURLResponse,
                   (200...299).contains(response.statusCode) else {
-                completion(.failure(.unknown))
+                print("잘못된 response가 전달되었습니다.")
                 return
             }
             
             if let data = data,
                let jokeResponse = try? JSONDecoder().decode(JokeResponse.self, from: data) {
-                completion(.success(jokeResponse))
+                print("서버로부터 받은 정보를 디코딩까지 완료했습니다.")
                 return
             }
             
-            completion(.failure(.unknown))
+            print("디코딩이 불가능하거나, 데이터가 nil입니다.")
         }
 
         task.resume()
