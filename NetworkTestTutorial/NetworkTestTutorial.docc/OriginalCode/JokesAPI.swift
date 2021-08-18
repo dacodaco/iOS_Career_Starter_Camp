@@ -7,9 +7,9 @@ struct JokesAPI {
             """
             {
                 "type": "success",
-                    "value": {
+                "value": {
                     "id": 459,
-                    "joke": "Chuck Norris can solve the Towers of Hanoi in one move.",
+                    "joke": "It is a test Joke",
                     "categories": []
                 }
             }
@@ -18,34 +18,37 @@ struct JokesAPI {
     }
 }
 
-enum APIError: Error {
-    case unknownError
-}
-
 class JokesAPIProvider {
-    let session: URLSessionProtocol
-    init(session: URLSessionProtocol){
+    let session: URLSession
+    
+    init(session: URLSession){
         self.session = session
     }
     
-    func fetchRandomJoke(completion: @escaping(Result<Joke, APIError>) -> Void) {
+    func fetchRandomJoke(completion: @escaping (Result<JokeResponse, APIError>) -> Void) {
         let request = URLRequest(url: JokesAPI.url)
         
         let task: URLSessionDataTask = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(.serverError))
+                return
+            }
+            
             guard let response = response as? HTTPURLResponse,
                   (200...299).contains(response.statusCode) else {
-                completion(.failure(.unknownError))
+                      completion(.failure(.responseError))
                 return
             }
             
             if let data = data,
-               let jokeResponse = try? JSONDecoder().decode(JokeReponse.self, from: data) {
-                completion(.success(jokeResponse.value))
+               let jokeResponse = try? JSONDecoder().decode(JokeResponse.self, from: data) {
+                completion(.success(jokeResponse))
                 return
             }
             
-            completion(.failure(.unknownError))
+            completion(.failure(.dataError))
         }
+
         task.resume()
     }
 }

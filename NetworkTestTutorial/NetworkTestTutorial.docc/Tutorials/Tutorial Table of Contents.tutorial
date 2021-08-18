@@ -1,9 +1,7 @@
 @Tutorials(name: "") {
     @Intro(title: "Test without Networking") {
-        URLSession을 활용해 네트워크 작업을 진행하다보면 예상치 못한 상황에 직면하는 경우가 있습니다.
-        예를 들어 우리가 서버와 소통하는 과정에서 오류가 발생했다고 생각해봅시다.
-        우리는 그 문제의 원인이 서버에 있는 것인지, 내가 처리하는 방식에 있는 것인지 알 수 없을 것입니다.
-        이와 같은 문제를 해결하기 위해서 우리는 네트워크와 무관하게 우리의 코드를 테스트하는 방법을 고민해볼 필요가 있습니다.
+        When you use URLSession to work on your network, you may encounter unexpected situations.
+        To solve this problem situations, we need to think about how to test our code independently of the network.
         
         @Image(source: yagom.jpg, alt: "")
     }

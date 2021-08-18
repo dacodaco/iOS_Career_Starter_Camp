@@ -7,9 +7,9 @@ struct JokesAPI {
             """
             {
                 "type": "success",
-                    "value": {
+                "value": {
                     "id": 459,
-                    "joke": "Chuck Norris can solve the Towers of Hanoi in one move.",
+                    "joke": "It is a test Joke",
                     "categories": []
                 }
             }

@@ -1,28 +1,72 @@
 @Tutorial(time: 20) {
     @Intro(title: "Make Model type") {
-        <#text#>
-        
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        To decode JSON data received from the server, you need a template to contain it. We call this template a model type.
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "create model type while checking JSON structure") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
-            
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            You need to know what JSON Data looks like to be imported from the server so that you can get the right model type.
         }
         
         @Steps {
             @Step {
-                <#text#>
+                We already have data written down in the 'sampleData' variable. 
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                This shows that the data from the server has the top key 'type' and 'value' and that the lower key corresponding to value has 'id', 'joke', and 'categories'.
+                
+                @Code(name: "JokesAPI.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step1.swift") 
             }
             
             @Step {
-                <#text#>
+                The type that will be the template for decoding data is called the model type. Creates a file for the model type and creates a structure.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step2.swift") {
+                    @Image(source: preview-JSON.jpg)
+                }
+            }
+            
+            @Step {
+                Create a model type 'JokeResponse' that can hold the parent key.
+
+                Let's keep in mind that the type of 'value' is the Jake structure.
+                
+                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step3.swift") {
+                    @Image(source: preview-JSON.jpg)
+                }
+            }
+            
+            @Step {
+                Joke and JokeResponse should be a type that can decode typical JSON data. 
+                
+                When you adopt the Decodable protocol, type can decode itself from an external representation.
+                
+                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step4.swift") {
+                    @Image(source: preview-Decodable.jpg)
+                }
+            }
+            
+            @Step {
+                PlaceHolder
+                
+                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step5.swift")
+            }
+            
+            @Step {
+                PlaceHolder
+                
+                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step6.swift")
+            }
+            
+            @Step {
+                PlaceHolder
+                
+                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step7.swift")
+            }
+            
+            @Step {
+                PlaceHolder
+                
+                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step8.swift")
             }
         }
     }
