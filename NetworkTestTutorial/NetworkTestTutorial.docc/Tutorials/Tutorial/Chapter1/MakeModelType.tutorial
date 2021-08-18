@@ -97,7 +97,7 @@
             @Step {
                 If you test it, you will see that you have been notified that you have succeeded.
                 
-                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step5.swift") {
+                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step6.swift") {
                     @Image(source: preview-verify2.jpg)
                 }
             }
