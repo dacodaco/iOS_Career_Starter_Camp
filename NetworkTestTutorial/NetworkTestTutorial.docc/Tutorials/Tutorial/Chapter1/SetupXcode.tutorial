@@ -1,28 +1,50 @@
-@Tutorial(time: <#number#>) {
-    @Intro(title: "<#text#>") {
-        <#text#>
+@Tutorial(time: 5) {
+    @Intro(title: "Setup Xcode for practice") {
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Setup Xcode for practice") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            You should Setup Environment for Practice next Steps
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
+                Run Xcode and create a new Xcode project
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                @Image(source: overview-SetupXcode1.png, alt: "")
             }
             
             @Step {
-                <#text#>
+                Select the macOS tab and click the Command Line Tool item.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Image(source: overview-SetupXcode2.png, alt: "")
+            }
+            
+            @Step {
+                Name and create the desired project.
+                
+                @Image(source: overview-SetupXcode3.png, alt: "")
+            }
+            
+            @Step {
+                Check that the project was created.
+                
+                @Image(source: overview-SetupXcode4.png, alt: "")
+            }
+            
+            @Step {
+                Enter and run (cmd + R) main.swift file 
+                
+                @Image(source: overview-SetupXcode5.png, alt: "")
+            }
+            
+            @Step {
+                Check that the console log outputs "Hello, World".
+                
+                @Image(source: overview-SetupXcode6.png, alt: "")
             }
         }
     }
