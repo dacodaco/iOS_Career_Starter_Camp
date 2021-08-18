@@ -1,8 +1,6 @@
-//
-//  File 4.swift
-//  File 4
-//
-//  Created by 김찬우 on 2021/08/18.
-//
-
-import Foundation
+class PracticeTests: XCTestCase {
+    func test_is_ModelType_can_decode_JSONData() {
+        let jokesAPI = JokesAPI()
+        let data = jokesAPI.sampleData
+    }
+}

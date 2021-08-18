@@ -62,27 +62,44 @@
         
         @Steps {
             @Step {
-                PlaceHolder
+                When a project is created, the test file is created with it by default. The logics we create are tested through the internal methods of this file.
                 
-                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step1.swift")
+                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step1.swift") {
+                    @Image(source: preview-verify1.jpg)
+                }
             }
             
             @Step {
-                PlaceHolder
-                
-                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step2.swift")
+                Clears the already implemented methods and creates a method to verify that the data is parsed well.                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step2.swift")
             }
             
             @Step {
-                PlaceHolder
-                
-                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step3.swift")
+                To utilize sample JSON data, we create instances of JokesAPI type and assign the data to constants.                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step3.swift")
             }
             
             @Step {
-                PlaceHolder
+                Create an instance of the JSONDecoder type for decoing JSON. After decode the data, store it in a parsedData constant.
                 
-                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step4.swift")
+                If the data is not decoded, XCTfail() will notify you that the test has failed. 
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step4.swift")
+            }
+            
+            @Step {
+                XCTAsertEqual indicates the success of the test if the values of left and right sides are the same, and if different, the test fails.
+                
+                We checked that the value of the key 'type' in the data is properly decoded. Therefore, it has been proved that there is no problem with our model type.
+                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step5.swift")
+            }
+            
+            @Step {
+                If you test it, you will see that you have been notified that you have succeeded.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "NetworkingWithURLSession-MakeModel-Section2-Step5.swift") {
+                    @Image(source: preview-verify2.jpg)
+                }
             }
         }
     } 

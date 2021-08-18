@@ -1,4 +1,3 @@
-import XCTest
 class PracticeTests: XCTestCase {
     func test_is_ModelType_can_decode_JSONData() {
         let jokesAPI = JokesAPI()
@@ -9,5 +8,7 @@ class PracticeTests: XCTestCase {
             XCTFail()
             return
         }
+        
+        XCTAssertEqual(parsedData.type, "success")
     }
 }

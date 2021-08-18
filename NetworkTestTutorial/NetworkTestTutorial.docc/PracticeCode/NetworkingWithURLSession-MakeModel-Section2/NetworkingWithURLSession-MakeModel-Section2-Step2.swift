@@ -1,8 +1,8 @@
-//
-//  File 5.swift
-//  File 5
-//
-//  Created by 김찬우 on 2021/08/18.
-//
+import XCTest
+@testable import Practice
 
-import Foundation
+class PracticeTests: XCTestCase {
+    func test_is_ModelType_can_decode_JSONData() {
+        
+    }
+}
