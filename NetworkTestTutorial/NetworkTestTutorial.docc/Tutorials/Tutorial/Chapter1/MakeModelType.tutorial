@@ -55,7 +55,7 @@
         
         
             
-    @Section(title: "Test model type can parse JSON data") { 
+    @Section(title: "Verify model type can parse JSON data") { 
         @ContentAndMedia(layout: horizontal) {
             It is necessary to check if the model type that was created can actually parse JSON data.
         }

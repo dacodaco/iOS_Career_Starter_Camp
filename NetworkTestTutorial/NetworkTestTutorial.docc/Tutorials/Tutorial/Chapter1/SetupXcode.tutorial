@@ -18,7 +18,7 @@
             }
             
             @Step {
-                Select the macOS tab and click the Command Line Tool item.
+                Select the iOS tab and click the App item.
                 
                 @Image(source: overview-SetupXcode2.png, alt: "")
             }
@@ -36,9 +36,11 @@
             }
             
             @Step {
-                Enter and run (cmd + R) main.swift file 
+                Open ViewController.swift and insert code, `print("Hello")`
                 
-                @Image(source: overview-SetupXcode5.png, alt: "")
+                @Code(name: ViewController.swift, file: "ViewController.swift") {
+                    @Image(source: preview-SetupXcode5.png, alt: "")
+                }
             }
             
             @Step {
