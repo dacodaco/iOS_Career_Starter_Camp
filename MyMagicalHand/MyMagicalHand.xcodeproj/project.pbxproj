@@ -13,9 +13,11 @@
 		C792757A262C81C900EF5D3A /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7927579262C81C900EF5D3A /* DrawingViewController.swift */; };
 		C792757F262C81CB00EF5D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C792757E262C81CB00EF5D3A /* Assets.xcassets */; };
 		C7927582262C81CB00EF5D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7927580262C81CB00EF5D3A /* LaunchScreen.storyboard */; };
+		D030ABFF26CDE29D006C1F8E /* ShapeClassifierProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030ABFE26CDE29D006C1F8E /* ShapeClassifierProvider.swift */; };
 		D046AAF026C15799009EB6BD /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D046AAEF26C15799009EB6BD /* .swiftlint.yml */; };
 		D0CC0C3426C11B09008667E8 /* ShapeClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0C3326C11B09008667E8 /* ShapeClassifier.mlmodel */; };
 		D0E1C7D626C20FA70045B6A0 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1C7D526C20FA70045B6A0 /* DrawingView.swift */; };
+		D0FFA41726CA57120070E684 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FFA41626CA57120070E684 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +30,11 @@
 		C792757E262C81CB00EF5D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7927581262C81CB00EF5D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7927583262C81CB00EF5D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D030ABFE26CDE29D006C1F8E /* ShapeClassifierProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeClassifierProvider.swift; sourceTree = "<group>"; };
 		D046AAEF26C15799009EB6BD /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D0CC0C3326C11B09008667E8 /* ShapeClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ShapeClassifier.mlmodel; sourceTree = "<group>"; };
 		D0E1C7D526C20FA70045B6A0 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		D0FFA41626CA57120070E684 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		E21D3AB4CC6DB0E6ED2BF576 /* Pods_MyMagicalHand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMagicalHand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 				C792757E262C81CB00EF5D3A /* Assets.xcassets */,
 				C7927580262C81CB00EF5D3A /* LaunchScreen.storyboard */,
 				C7927583262C81CB00EF5D3A /* Info.plist */,
+				D0FFA41526CA56FC0070E684 /* Extensions */,
 			);
 			path = MyMagicalHand;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D0CC0C3326C11B09008667E8 /* ShapeClassifier.mlmodel */,
+				D030ABFE26CDE29D006C1F8E /* ShapeClassifierProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +133,14 @@
 				D0E1C7D526C20FA70045B6A0 /* DrawingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D0FFA41526CA56FC0070E684 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0FFA41626CA57120070E684 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +262,8 @@
 				D0E1C7D626C20FA70045B6A0 /* DrawingView.swift in Sources */,
 				C7927576262C81C900EF5D3A /* AppDelegate.swift in Sources */,
 				C7927578262C81C900EF5D3A /* SceneDelegate.swift in Sources */,
+				D030ABFF26CDE29D006C1F8E /* ShapeClassifierProvider.swift in Sources */,
+				D0FFA41726CA57120070E684 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,12 +5,15 @@
 // 
 
 import UIKit
+import CoreML
+import Vision
 
 class DrawingViewController: UIViewController {
 
+    let shapeClassifierProvider = ShapeClassifierProvider()
     let drawingView = DrawingView()
     let strokeColor = UIColor.black
-    let brushWidth: CGFloat = 10.0
+    let brushWidth: CGFloat = 15
     let opacity: CGFloat = 1.0
     var lastTouchedPoint = CGPoint.zero
     var swiped = false
@@ -37,7 +40,21 @@ class DrawingViewController: UIViewController {
     }
 
     @objc func showResult() {
+        let renderer = UIGraphicsImageRenderer(bounds: drawingView.canvasView.frame)
+        let image = renderer.image { context in
+            drawingView.canvasView.layer.render(in: context.cgContext)
+        }
 
+        shapeClassifierProvider.updateClassifications(for: image) {
+            if let resultTexts = self.shapeClassifierProvider.resultTexts {
+                let percentage = resultTexts[0] + "%"
+                let result = String(resultTexts[1])
+                DispatchQueue.main.async {
+                    self.drawingView.percentageToMatch.text = percentage
+                    self.drawingView.resultLabel.text = result
+                }
+            }
+        }
     }
 }
 
