@@ -46,13 +46,15 @@ class DrawingViewController: UIViewController {
         }
 
         shapeClassifierProvider.updateClassifications(for: image) {
-            if let resultTexts = self.shapeClassifierProvider.resultTexts {
-                let percentage = resultTexts[0] + "%"
-                let result = String(resultTexts[1])
-                DispatchQueue.main.async {
-                    self.drawingView.percentageToMatch.text = percentage
-                    self.drawingView.resultLabel.text = result
-                }
+            guard let resultTexts = self.shapeClassifierProvider.resultTexts else {
+                return
+            }
+
+            let percentage = resultTexts[0] + "%"
+            let result = String(resultTexts[1])
+            DispatchQueue.main.async {
+                self.drawingView.percentageToMatch.text = percentage
+                self.drawingView.resultLabel.text = result
             }
         }
     }
