@@ -13,7 +13,7 @@ class DrawingViewController: UIViewController {
     let shapeClassifierProvider = ShapeClassifierProvider()
     let drawingView = DrawingView()
     let strokeColor = UIColor.black
-    let brushWidth: CGFloat = 15
+    let brushWidth: CGFloat = 20
     let opacity: CGFloat = 1.0
     var lastTouchedPoint = CGPoint.zero
     var swiped = false

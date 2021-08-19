@@ -20,24 +20,66 @@ class ShapeClassifierProvider {
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
                 self?.processClassifications(for: request, error: error)
             })
-            request.imageCropAndScaleOption = .scaleFill
+            request.imageCropAndScaleOption = .centerCrop
             return request
         } catch {
             fatalError("Failed to load Vision ML model: \(error)")
         }
     }()
+    
+    func makePixelBuffer(from image: UIImage) -> CVPixelBuffer? {
+        let attrs = [
+            kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
+            kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue
+        ] as CFDictionary
+        
+        var pixelBuffer : CVPixelBuffer?
+
+        let status = CVPixelBufferCreate(
+            kCFAllocatorDefault,
+            Int(299),
+            Int(299),
+            kCVPixelFormatType_32ARGB,
+            attrs,
+            &pixelBuffer)
+        
+        guard (status == kCVReturnSuccess) else {
+            return nil
+        }
+
+        CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+        let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer!)
+        let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+        let context = CGContext(
+            data: pixelData,
+            width: Int(image.size.width),
+            height: Int(image.size.height),
+            bitsPerComponent: 8,
+            bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!),
+            space: rgbColorSpace,
+            bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue
+        )
+
+        context?.translateBy(x: 0, y: image.size.height)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        UIGraphicsPushContext(context!)
+        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+        UIGraphicsPopContext()
+        CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+
+        return pixelBuffer
+    }
 
     func updateClassifications(for image: UIImage, completion: @escaping () -> Void) {
         guard let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)) else {
             return
         }
-
-        guard let ciImage = CIImage(image: image) else {
-            fatalError("Unable to create \(CIImage.self) from \(image).")
-        }
+        
+        guard let pixelBuffer = makePixelBuffer(from: image) else { return }
 
         DispatchQueue.global(qos: .userInitiated).async {
-            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation)
+            
             do {
                 try handler.perform([self.classificationRequest])
                 completion()
