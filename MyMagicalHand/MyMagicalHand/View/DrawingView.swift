@@ -11,7 +11,7 @@ class DrawingView: UIView {
     typealias ButtonAction = () -> Void
 
     var resultText: String?
-    var containerView: UIStackView = {
+    lazy var containerView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .fill
@@ -21,14 +21,14 @@ class DrawingView: UIView {
         return stackView
     }()
 
-    var canvasView: UIImageView = {
+    lazy var canvasView: UIImageView = {
         let drawingView = UIImageView()
         drawingView.backgroundColor = .white
         drawingView.translatesAutoresizingMaskIntoConstraints = false
         return drawingView
     }()
 
-    var labelStackView: UIStackView = {
+    lazy var labelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
@@ -37,7 +37,7 @@ class DrawingView: UIView {
         return stackView
     }()
 
-    var resultButton: UIButton = {
+    lazy var resultButton: UIButton = {
         let button = UIButton()
         button.contentHorizontalAlignment = .leading
         button.setTitle("결과보기", for: .normal)
@@ -47,7 +47,7 @@ class DrawingView: UIView {
         return button
     }()
 
-    var deleteButton: UIButton = {
+    lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.contentHorizontalAlignment = .trailing
         button.setTitle("지우기", for: .normal)
@@ -57,7 +57,7 @@ class DrawingView: UIView {
         return button
     }()
 
-    var resultLabel: UILabel = {
+    lazy var resultLabel: UILabel = {
         let label = UILabel()
         label.text = "예비 글씨"
         label.font = UIFont.preferredFont(forTextStyle: .title3)
@@ -67,7 +67,7 @@ class DrawingView: UIView {
         return label
     }()
 
-    var percentageToMatch: UILabel = {
+    lazy var percentageToMatch: UILabel = {
         let label = UILabel()
         label.text = "10% 예비 글씨"
         label.font = UIFont.preferredFont(forTextStyle: .body)
