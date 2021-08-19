@@ -1,7 +1,7 @@
 @Tutorial(time: 5) {
     @Intro(title: "Setup Xcode for practice") {
+        Xcode에서 프로젝트를 생성합니다.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
     @Section(title: "Setup Xcode for practice") {

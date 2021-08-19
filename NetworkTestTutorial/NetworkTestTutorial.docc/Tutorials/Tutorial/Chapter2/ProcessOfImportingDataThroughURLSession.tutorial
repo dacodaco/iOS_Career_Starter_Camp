@@ -1,0 +1,47 @@
+@Tutorial(time: <#number#>) {
+    @Intro(title: "Process of importing data through URLSession") {
+        Check the communication process using URLSession and implement it in code.
+    }
+    
+    @Section(title: "Understand How URLSession works") {
+        @ContentAndMedia(layout: horizontal) {
+            The URLSession class and related classes provide an API for downloading data from and uploading data to endpoints indicated by URLs.
+        }
+        
+        @Steps {
+            @Step {
+                When you try to fetch Website Data into memory, you should use a URL session instance to create the task.
+                
+                @Image(source: preview-Process-Section1-1.png)
+            }
+            
+            @Step {
+                `URLSession` instance has a method, `dataTask(with:, completionHandler:) -> URLSessionDataTask`
+                
+                It return `URLSessionDataTask` instance which help you to communicate with server which has a JSON Data you want.
+                
+                @Image(source: preview-Process-Section1-2.png)
+            }
+            
+            @Step {
+                The dataTask method has two parameters. One (with:) should contain what requests to send to the server. Requests include HTTP Method, url, etc. 
+                
+                The other (completionHandler:) should contain information on how to handle the Response received from the server after communication with the server ends.
+                
+                @Image(source: preview-Process-Section1-3.png)
+            }
+            
+            @Step {
+                It is important to note that before a URLSessionDataTask instance is resume(), we define which server to communicate with, how to communicate with, and how can handle Response after the communication, `'Together'`.
+                
+                @Image(source: preview-Process-Section1-4.png)
+            }
+            
+            @Step {
+                The need to define it `'Together'` can be an obstacle for us to test a single behavior.
+                
+                @Image(source: preview-Process-Section1-5.png)
+            }
+        }
+    }
+}

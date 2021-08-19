@@ -1,6 +1,6 @@
 @Tutorial(time: 20) {
     @Intro(title: "Create Model type") {
-        To decode JSON data received from the server, you need a template to contain it. We call this template a model type.
+        JSON 데이터를 받기 위한 모델타입을 생성하고, 테스트를 통해 검증합니다.
     }
     
     @Section(title: "create model type while checking JSON structure") {

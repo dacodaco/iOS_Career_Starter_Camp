@@ -6,8 +6,8 @@
         @Image(source: yagom.jpg, alt: "")
     }
     
-    @Chapter(name: "Networking with URLSession") {
-        Swift에서 클라이언트와 서버가 서로 소통하는 방법에 대해 간략하게 배웁니다. 
+    @Chapter(name: "Preparation for Practical Practice") {
+        네트워크를 활용한 테스트를 진행하기 위한 기반 작업을 진행합니다. 
         
         @Image(source: communication.jpg, alt: "")
         @TutorialReference(tutorial: "doc:SetupXcode")
@@ -15,11 +15,11 @@
         @TutorialReference(tutorial: "doc:MakeModelType")
     }
     
-    @Chapter(name: "How To Test My Code") {
+    @Chapter(name: "How to test URLSession works") {
         일반적으로 네트워크 과정을 확인하는 방법을 배웁니다.
         
         @Image(source: networking.jpg, alt: "")
-        @TutorialReference(tutorial: "doc:HowToTestMyCode")
+        @TutorialReference(tutorial: "doc:ProcessOfImportingDataThroughURLSession")
     }
     
     @Chapter(name: "Test Without Networking") {

@@ -1,6 +1,6 @@
 @Tutorial(time: 20) {
     @Intro(title: "Configure files for API") {
-        Configuring default files for networking is essential for communication between servers and clients.
+        서버와 클라이언트 사이에 소통하기 위한 기반 파일들을 생성합니다. 
     }
     
     @Section(title: "Make JokesAPI class") {
