@@ -12,41 +12,47 @@ import ImageIO
 
 class ShapeClassifierProvider {
     var resultTexts: [String]?
+    var classificationRequest: VNCoreMLRequest?
 
-    lazy var classificationRequest: VNCoreMLRequest = {
-        do {
-            let model = try VNCoreMLModel(for: ShapeClassifier().model)
+    func classificationRequestwithCompletion(completion: @escaping () -> Void) -> VNCoreMLRequest {
+        var classificationRequest: VNCoreMLRequest = {
+            do {
+                let model = try VNCoreMLModel(for: ShapeClassifier().model)
 
-            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-                self?.processClassifications(for: request, error: error)
-            })
-            request.imageCropAndScaleOption = .centerCrop
-            return request
-        } catch {
-            fatalError("Failed to load Vision ML model: \(error)")
-        }
-    }()
+                let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                    self?.processClassifications(for: request, error: error, completion: {
+                        completion()
+                    })
+                })
+                request.imageCropAndScaleOption = .centerCrop
+                return request
+            } catch {
+                fatalError("Failed to load Vision ML model: \(error)")
+            }
+        }()
+
+        return classificationRequest
+    }
 
     func updateClassifications(for image: UIImage, completion: @escaping () -> Void) {
         guard let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)) else {
             return
         }
-        
+
         guard let pixelBuffer = image.toCVPixelBuffer() else { return }
 
-        DispatchQueue.global(qos: .userInitiated).async {
-            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation)
-            
-            do {
-                try handler.perform([self.classificationRequest])
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation)
+
+        do {
+            try handler.perform([self.classificationRequestwithCompletion(completion: {
                 completion()
-            } catch {
-                print("Failed to perform classification.\n\(error.localizedDescription)")
-            }
+            })])
+        } catch {
+            print("Failed to perform classification.\n\(error.localizedDescription)")
         }
     }
 
-    func processClassifications(for request: VNRequest, error: Error?) {
+    func processClassifications(for request: VNRequest, error: Error?, completion: @escaping () -> Void) {
         DispatchQueue.main.async {
             guard let results = request.results else {
                 return
@@ -62,6 +68,7 @@ class ShapeClassifierProvider {
                 let result = String(topClassification.identifier) + "처럼 보이네요"
                 self.resultTexts = [percentage, result]
             }
+            completion()
         }
     }
 }
