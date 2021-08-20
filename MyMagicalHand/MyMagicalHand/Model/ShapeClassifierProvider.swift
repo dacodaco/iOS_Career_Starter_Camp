@@ -15,7 +15,7 @@ class ShapeClassifierProvider {
     var classificationRequest: VNCoreMLRequest?
 
     func classificationRequestwithCompletion(completion: @escaping () -> Void) -> VNCoreMLRequest {
-        var classificationRequest: VNCoreMLRequest = {
+        let classificationRequest: VNCoreMLRequest = {
             do {
                 let model = try VNCoreMLModel(for: ShapeClassifier().model)
 
