@@ -1,0 +1,91 @@
+@Tutorial(time: <#number#>) {
+    @Intro(title: "Testing URLSession with Network") {
+        Before test your  
+        
+        @Image(source: , alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Testing URLSession with Network") {
+        Communication with the server is also one of the parts we need to test.
+        
+        @ContentAndMedia(layout: horizontal) {
+            
+        }
+        
+        @Steps {
+            @Step {
+                Before proceeding with a network-related test, we must first know how to proceed with the test through network communication.
+                
+                Please open the `NetworkTestTutorialTests` file for testing.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step1.swift)
+            }
+            
+            @Step {
+                Create a method to test over the network.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step2.swift)
+            }
+            
+            @Step {
+                Create a URL Session to proceed with networking.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step3.swift)
+            }
+            
+            @Step {
+                Create a JokesAPIProvider object to use the fetchRandomJoke method.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step4.swift)
+            }
+            
+            @Step {
+                The fetchRandomJoke method receives the `Result<JokeRespond, APIError>` type as a argument. 
+                
+                If communication fails, XCTFail() runs, and if successful, XCTAsertEqual checks associated values.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step5.swift)
+            }
+            
+            @Step {
+                If you proceed with the test, you can see that it passes without error. 
+                
+                @Image(source: "Testing-Section2-Step6.jpg")
+            }
+            
+            @Step {
+                However, if you look closely, you can see that the test was over before the completion handler of the fetchRandomJoke() method was called. This is because network operations are asynchronous.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step7.swift) {
+                    @Video(source: "Testing-Section2-Step7.mp4")
+                }
+            }
+            
+            @Step {
+                To wait until the asynchronous operation is complete, we must utilize XCTestExpectation().
+                
+                The wait(for:timeout:) method waits for the specified time to be called, and stops waiting over time.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step8.swift)
+            }
+            
+            @Step {
+                Finally, create a valueCheck variable. To verify that the value was saved after the wait(for:timeout:) method was called.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: Testing-Section2-Step9.swift)
+            }
+            
+            @Step {
+                Ensure that the test is performed properly.
+                
+                @Video(source: "Testing-Section2-Step10.mp4")
+            }
+            
+            @Step {
+                Again, let's turn off the wifi and proceed with the test.
+                
+                @Video(source: "Testing-Section2-Step11.mp4")
+            }
+        }
+    }
+}

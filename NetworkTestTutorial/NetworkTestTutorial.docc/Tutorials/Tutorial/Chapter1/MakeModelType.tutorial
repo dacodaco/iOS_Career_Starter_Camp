@@ -20,7 +20,7 @@
             @Step {
                 The type that will be the template for decoding data is called the model type. Creates a file for the model type and creates a structure.
                 
-                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step2.swift") {
+                @Code(name: "model.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step2.swift") {
                     @Image(source: preview-JSON.jpg)
                 }
             }
@@ -30,7 +30,7 @@
 
                 Let's keep in mind that the type of 'value' is the Jake structure.
                 
-                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step3.swift") {
+                @Code(name: "model.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step3.swift") {
                     @Image(source: preview-JSON.jpg)
                 }
             }
@@ -38,7 +38,7 @@
             @Step {
                 Joke and JokeResponse should be a type that can decode typical JSON data. So let's adopt the Decodable protocol.
 
-                @Code(name: "PlaceHolder.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step4.swift") {
+                @Code(name: "model.swift", file: "NetworkingWithURLSession-MakeModel-Section1-Step4.swift") {
                     @Image(source: preview-Decodable.jpg)
                 }
             }

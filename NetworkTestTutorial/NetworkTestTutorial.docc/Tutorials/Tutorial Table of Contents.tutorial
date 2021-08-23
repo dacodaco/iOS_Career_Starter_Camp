@@ -20,6 +20,8 @@
         
         @Image(source: networking.jpg, alt: "")
         @TutorialReference(tutorial: "doc:ProcessOfImportingDataThroughURLSession")
+        @TutorialReference(tutorial: "doc:TestingURLSessionWithNetwork")
+        
     }
     
     @Chapter(name: "Test Without Networking") {
