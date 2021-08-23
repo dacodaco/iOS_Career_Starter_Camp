@@ -1,5 +1,5 @@
 import XCTest
-@testable import Practice
+@testable import YourProject
 
 class PracticeTests: XCTestCase {
 
