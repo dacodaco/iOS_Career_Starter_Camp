@@ -1,28 +1,43 @@
-@Tutorial(time: <#number#>) {
-    @Intro(title: "<#text#>") {
-        <#text#>
-        
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+@Tutorial(time: 20) {
+    @Intro(title: "Test without Networking") {
+        Perform tests that do not depend on the network state.
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Limits of testing over the network") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Testing over the network has the advantage of being in the same state as it is in reality. However, there is also a disadvantage that it is difficult to find the cause of the error when it occurs.
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
+                Suppose an error occurred in the fetchRandomJoke() method. Can we find out from the test whether the problem occurred on the server or in the completion closure of the dataTask? I don't think so.
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                @Code(name: "JokesAPI.swift", file: Limits-Section1-Step1.swift)
             }
             
             @Step {
-                <#text#>
+                This is because the response is received from the server with the call of the response() method and the completion action is performed at once.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Image(source: Limits-Section1-Step2.png)
+            }
+            
+            @Step {
+                If either the completion or server operations have errors, the resume() method will have errors.
+
+                @Image(source: Limits-Section1-Step3.png)
+            }
+            
+            @Step {
+                Therefore, we need to create a new MockURLSession that exports fixed data without going through the server, enabling network-independent testing.
+                
+                @Image(source: Limits-Section1-Step4.png)
+            }
+            
+            @Step {
+                It also allows the creation of a parent protocol (URLSession Protocol) so that these two can be used alternately in the same situation.
+                
+                @Image(source: Limits-Section1-Step5.png)
             }
         }
     }
