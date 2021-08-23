@@ -18,7 +18,7 @@ class PracticeTests: XCTestCase {
     func test_URLSession_with_Network() {
         let expectation = XCTestExpectation(description: "waitForNetworking")
         var valueCheck: JokeResponse?
-        let session = MockURLSession()
+        let session = URLSession.shared
         let jokesAPIProvider = JokesAPIProvider(session: session)
 
         jokesAPIProvider.fetchRandomJoke { result in
@@ -39,7 +39,7 @@ class PracticeTests: XCTestCase {
     func test_URLSession_without_Network() {
         let expectation = XCTestExpectation(description: "waitForNetworking")
         var valueCheck: JokeResponse?
-        let session = URLSession.shared
+        let session = MockURLSession()
         let jokesAPIProvider = JokesAPIProvider(session: session)
 
         jokesAPIProvider.fetchRandomJoke { result in

@@ -29,5 +29,6 @@
         
         @Image(source: mock.jpg, alt: "")
         @TutorialReference(tutorial: "doc:TestWithoutNetworking")
+        @TutorialReference(tutorial: "doc:TestWithoutNetworking2")
     }
 }
