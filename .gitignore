@@ -52,6 +52,14 @@ Temporary Items
 ## Build generated
 build/
 DerivedData/
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
+db.sqlite
+.swiftpm
 
 ## Various settings
 *.pbxuser
