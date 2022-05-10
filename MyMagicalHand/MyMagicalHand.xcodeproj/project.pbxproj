@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B97297534DE24D72C79A651C /* Pods_MyMagicalHand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21D3AB4CC6DB0E6ED2BF576 /* Pods_MyMagicalHand.framework */; };
+		C7927576262C81C900EF5D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7927575262C81C900EF5D3A /* AppDelegate.swift */; };
+		C7927578262C81C900EF5D3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7927577262C81C900EF5D3A /* SceneDelegate.swift */; };
+		C792757A262C81C900EF5D3A /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7927579262C81C900EF5D3A /* DrawingViewController.swift */; };
+		C792757F262C81CB00EF5D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C792757E262C81CB00EF5D3A /* Assets.xcassets */; };
+		C7927582262C81CB00EF5D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7927580262C81CB00EF5D3A /* LaunchScreen.storyboard */; };
+		D030ABFF26CDE29D006C1F8E /* ShapeClassifierProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030ABFE26CDE29D006C1F8E /* ShapeClassifierProvider.swift */; };
+		D046AAF026C15799009EB6BD /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D046AAEF26C15799009EB6BD /* .swiftlint.yml */; };
+		D0ACD49726CDF683003B7229 /* ShapeClassifier4.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D0ACD49626CDF683003B7229 /* ShapeClassifier4.mlmodel */; };
+		D0CC0C3426C11B09008667E8 /* ShapeClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0C3326C11B09008667E8 /* ShapeClassifier.mlmodel */; };
+		D0E1C7D626C20FA70045B6A0 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1C7D526C20FA70045B6A0 /* DrawingView.swift */; };
+		D0FFA41726CA57120070E684 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FFA41626CA57120070E684 /* UIImageExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F35E7F61F6C65F6B13EAE63 /* Pods-MyMagicalHand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMagicalHand.release.xcconfig"; path = "Target Support Files/Pods-MyMagicalHand/Pods-MyMagicalHand.release.xcconfig"; sourceTree = "<group>"; };
+		9D3245F3E18DB0ECD39A8490 /* Pods-MyMagicalHand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMagicalHand.debug.xcconfig"; path = "Target Support Files/Pods-MyMagicalHand/Pods-MyMagicalHand.debug.xcconfig"; sourceTree = "<group>"; };
+		C7927572262C81C900EF5D3A /* MyMagicalHand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMagicalHand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7927575262C81C900EF5D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C7927577262C81C900EF5D3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C7927579262C81C900EF5D3A /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		C792757E262C81CB00EF5D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7927581262C81CB00EF5D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7927583262C81CB00EF5D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D030ABFE26CDE29D006C1F8E /* ShapeClassifierProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeClassifierProvider.swift; sourceTree = "<group>"; };
+		D046AAEF26C15799009EB6BD /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D0ACD49626CDF683003B7229 /* ShapeClassifier4.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ShapeClassifier4.mlmodel; sourceTree = "<group>"; };
+		D0CC0C3326C11B09008667E8 /* ShapeClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ShapeClassifier.mlmodel; sourceTree = "<group>"; };
+		D0E1C7D526C20FA70045B6A0 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		D0FFA41626CA57120070E684 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		E21D3AB4CC6DB0E6ED2BF576 /* Pods_MyMagicalHand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMagicalHand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C792756F262C81C900EF5D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97297534DE24D72C79A651C /* Pods_MyMagicalHand.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10FBD07E96EFD51160BFF1DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E21D3AB4CC6DB0E6ED2BF576 /* Pods_MyMagicalHand.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C39309906B92E3061141E128 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D3245F3E18DB0ECD39A8490 /* Pods-MyMagicalHand.debug.xcconfig */,
+				0F35E7F61F6C65F6B13EAE63 /* Pods-MyMagicalHand.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C7927569262C81C900EF5D3A = {
+			isa = PBXGroup;
+			children = (
+				D046AAEF26C15799009EB6BD /* .swiftlint.yml */,
+				C7927574262C81C900EF5D3A /* MyMagicalHand */,
+				C7927573262C81C900EF5D3A /* Products */,
+				C39309906B92E3061141E128 /* Pods */,
+				10FBD07E96EFD51160BFF1DD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C7927573262C81C900EF5D3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7927572262C81C900EF5D3A /* MyMagicalHand.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7927574262C81C900EF5D3A /* MyMagicalHand */ = {
+			isa = PBXGroup;
+			children = (
+				D0E1C7D326C20E160045B6A0 /* Delegate */,
+				D0E1C7D226C20E020045B6A0 /* Model */,
+				D0E1C7D426C20E5C0045B6A0 /* View */,
+				D0E1C7D126C20DE60045B6A0 /* Controller */,
+				C792757E262C81CB00EF5D3A /* Assets.xcassets */,
+				C7927580262C81CB00EF5D3A /* LaunchScreen.storyboard */,
+				C7927583262C81CB00EF5D3A /* Info.plist */,
+				D0FFA41526CA56FC0070E684 /* Extensions */,
+			);
+			path = MyMagicalHand;
+			sourceTree = "<group>";
+		};
+		D0E1C7D126C20DE60045B6A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C7927579262C81C900EF5D3A /* DrawingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D0E1C7D226C20E020045B6A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0CC0C3326C11B09008667E8 /* ShapeClassifier.mlmodel */,
+				D0ACD49626CDF683003B7229 /* ShapeClassifier4.mlmodel */,
+				D030ABFE26CDE29D006C1F8E /* ShapeClassifierProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0E1C7D326C20E160045B6A0 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C7927575262C81C900EF5D3A /* AppDelegate.swift */,
+				C7927577262C81C900EF5D3A /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		D0E1C7D426C20E5C0045B6A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0E1C7D526C20FA70045B6A0 /* DrawingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0FFA41526CA56FC0070E684 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0FFA41626CA57120070E684 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7927571262C81C900EF5D3A /* MyMagicalHand */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7927586262C81CB00EF5D3A /* Build configuration list for PBXNativeTarget "MyMagicalHand" */;
+			buildPhases = (
+				B1E032E86E400915E518F638 /* [CP] Check Pods Manifest.lock */,
+				C792756E262C81C900EF5D3A /* Sources */,
+				C792756F262C81C900EF5D3A /* Frameworks */,
+				C7927570262C81C900EF5D3A /* Resources */,
+				D046AAEE26C15716009EB6BD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyMagicalHand;
+			productName = MyMagicalHand;
+			productReference = C7927572262C81C900EF5D3A /* MyMagicalHand.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C792756A262C81C900EF5D3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					C7927571262C81C900EF5D3A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = C792756D262C81C900EF5D3A /* Build configuration list for PBXProject "MyMagicalHand" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7927569262C81C900EF5D3A;
+			productRefGroup = C7927573262C81C900EF5D3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7927571262C81C900EF5D3A /* MyMagicalHand */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7927570262C81C900EF5D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D046AAF026C15799009EB6BD /* .swiftlint.yml in Resources */,
+				C7927582262C81CB00EF5D3A /* LaunchScreen.storyboard in Resources */,
+				C792757F262C81CB00EF5D3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1E032E86E400915E518F638 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyMagicalHand-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D046AAEE26C15716009EB6BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C792756E262C81C900EF5D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C792757A262C81C900EF5D3A /* DrawingViewController.swift in Sources */,
+				D0CC0C3426C11B09008667E8 /* ShapeClassifier.mlmodel in Sources */,
+				D0ACD49726CDF683003B7229 /* ShapeClassifier4.mlmodel in Sources */,
+				D0E1C7D626C20FA70045B6A0 /* DrawingView.swift in Sources */,
+				C7927576262C81C900EF5D3A /* AppDelegate.swift in Sources */,
+				C7927578262C81C900EF5D3A /* SceneDelegate.swift in Sources */,
+				D030ABFF26CDE29D006C1F8E /* ShapeClassifierProvider.swift in Sources */,
+				D0FFA41726CA57120070E684 /* UIImageExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7927580262C81CB00EF5D3A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7927581262C81CB00EF5D3A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7927584262C81CB00EF5D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C7927585262C81CB00EF5D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7927587262C81CB00EF5D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D3245F3E18DB0ECD39A8490 /* Pods-MyMagicalHand.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyMagicalHand/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.MyMagicalHand;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7927588262C81CB00EF5D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F35E7F61F6C65F6B13EAE63 /* Pods-MyMagicalHand.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyMagicalHand/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.MyMagicalHand;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C792756D262C81C900EF5D3A /* Build configuration list for PBXProject "MyMagicalHand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7927584262C81CB00EF5D3A /* Debug */,
+				C7927585262C81CB00EF5D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7927586262C81CB00EF5D3A /* Build configuration list for PBXNativeTarget "MyMagicalHand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7927587262C81CB00EF5D3A /* Debug */,
+				C7927588262C81CB00EF5D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C792756A262C81C900EF5D3A /* Project object */;
+}

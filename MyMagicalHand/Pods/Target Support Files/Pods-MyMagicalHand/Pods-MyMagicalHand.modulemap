@@ -1,0 +1,6 @@
+framework module Pods_MyMagicalHand {
+  umbrella header "Pods-MyMagicalHand-umbrella.h"
+
+  export *
+  module * { export * }
+}
