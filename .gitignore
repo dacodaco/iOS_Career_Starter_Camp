@@ -52,6 +52,7 @@ Temporary Items
 ## Build generated
 build/
 DerivedData/
+<<<<<<< HEAD
 Packages
 .build
 xcuserdata
@@ -60,6 +61,8 @@ DerivedData/
 .DS_Store
 db.sqlite
 .swiftpm
+=======
+>>>>>>> iOS_RockSissorPaper/2-coda
 
 ## Various settings
 *.pbxuser
