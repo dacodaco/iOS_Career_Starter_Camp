@@ -1,0 +1,34 @@
+@Tutorials(name: "") {
+    @Intro(title: "Test without Networking") {
+        When you use URLSession to work on your network, you may encounter unexpected situations.
+        To solve this problem situations, we need to think about how to test our code independently of the network.
+        
+        @Image(source: yagom.jpg, alt: "")
+    }
+    
+    @Chapter(name: "Preparation for Practical Practice") {
+        네트워크를 활용한 테스트를 진행하기 위한 기반 작업을 진행합니다. 
+        
+        @Image(source: communication.jpg, alt: "")
+        @TutorialReference(tutorial: "doc:SetupXcode")
+        @TutorialReference(tutorial: "doc:ConfigureFilesForAPI")
+        @TutorialReference(tutorial: "doc:MakeModelType")
+    }
+    
+    @Chapter(name: "How to test URLSession works") {
+        일반적으로 네트워크 과정을 확인하는 방법을 배웁니다.
+        
+        @Image(source: networking.jpg, alt: "")
+        @TutorialReference(tutorial: "doc:ProcessOfImportingDataThroughURLSession")
+        @TutorialReference(tutorial: "doc:TestingURLSessionWithNetwork")
+        
+    }
+    
+    @Chapter(name: "Test Without Networking") {
+        네트워크와 무관한 테스트를 진행하는 방법을 확인합니다.
+        
+        @Image(source: mock.jpg, alt: "")
+        @TutorialReference(tutorial: "doc:TestWithoutNetworking")
+        @TutorialReference(tutorial: "doc:TestWithoutNetworking2")
+    }
+}

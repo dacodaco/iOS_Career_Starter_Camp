@@ -1,0 +1,53 @@
+@Tutorial(time: 5) {
+    @Intro(title: "Setup Xcode for practice") {
+        Xcode에서 프로젝트를 생성합니다.
+        
+    }
+    
+    @Section(title: "Setup Xcode for practice") {
+        @ContentAndMedia(layout: horizontal) {
+            You should Setup Environment for Practice next Steps
+            
+        }
+        
+        @Steps {
+            @Step {
+                Run Xcode and create a new Xcode project
+                
+                @Image(source: overview-SetupXcode1.png, alt: "")
+            }
+            
+            @Step {
+                Select the iOS tab and click the App item.
+                
+                @Image(source: overview-SetupXcode2.png, alt: "")
+            }
+            
+            @Step {
+                Name and create the desired project.
+                
+                @Image(source: overview-SetupXcode3.png, alt: "")
+            }
+            
+            @Step {
+                Check that the project was created.
+                
+                @Image(source: overview-SetupXcode4.png, alt: "")
+            }
+            
+            @Step {
+                Open ViewController.swift and insert code, `print("Hello")`
+                
+                @Code(name: ViewController.swift, file: "ViewController.swift") {
+                    @Image(source: preview-SetupXcode5.png, alt: "")
+                }
+            }
+            
+            @Step {
+                Check that the console log outputs "Hello, World".
+                
+                @Image(source: overview-SetupXcode6.png, alt: "")
+            }
+        }
+    }
+}

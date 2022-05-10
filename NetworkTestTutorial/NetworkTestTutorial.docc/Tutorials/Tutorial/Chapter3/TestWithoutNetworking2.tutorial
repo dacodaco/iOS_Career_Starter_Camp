@@ -1,0 +1,145 @@
+@Tutorial(time: <#number#>) {
+    @Intro(title: "Test without Networking") {
+        Perform tests that do not depend on the network state.
+    }
+    
+    @Section(title: "Define Mock and Test it") {
+        Define the Mock and perform a test accordingly.
+
+        @ContentAndMedia(layout: horizontal) {
+                        
+        }
+
+        @Steps {
+            @Step {
+                The dataTask method (with:completionHandler:) has a URLSessionDataTask type return value.
+
+                Returns the mockURLSessionDataTask to change the resume() behavior the way we want it to be.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step6.swift")
+            }
+            
+            @Step {
+                Allow the MockURLSessionDataTask class to contain custom resource() methods. In addition, we create a closure called runWhenResumeDidCall that will be called when the resume() method is executed.
+
+                By assigning a closure to this variable, we can pass a fixed response when calling the dataTask method.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step7.swift")
+            }
+            
+            @Step {
+                Create one HTTP URLResponse object that you will receive if networking succeeds.
+
+                Again, we're building a test that doesn't work on the network. Therefore, it is necessary to create a response that is assumed to have been received from the server.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step8.swift")
+            }
+            
+            @Step {
+                Assign a new closure to the runWhenResumeDidCall closure of the mockURLSessionDataTask when called by the dataTask method. 
+
+                Since the completionHandler must be called when the mockURLSessionDataTask() is resume(), assign the desired completionHandler to the runWhenResumeDidCall closure.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step9.swift")
+            }
+            
+            @Step {
+                Opens the Test file again.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "Make-Section1-Step10.swift")
+            }
+            
+            @Step {
+                Create a test method to proceed with network-independent tests.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "Make-Section1-Step11.swift") 
+            }
+            
+            @Step {
+                Unlike testing with network, assign MockURLSession() to session property.
+                
+                If you proceed with the test, an error will occur. Why?
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "Make-Section1-Step12.swift") {
+                    @Image(source: Make-Section-Step11.jpg)
+                }
+            }
+            
+            @Step {
+                This is because the session property of JokesAPIProvider is still a URLSession-type.
+                                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step13.swift") 
+            }
+            
+            @Step {
+                Since URLSession adopts URLSessionProtocol, there is no problem replacing the type of session with URLSessionProtocol.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step14.swift") {
+                    @Image(source: Limits-Section1-Step5.png)
+                }
+            }
+            
+            @Step {
+                Let's go back and do the test again.
+                
+                Congratulations! You have successfully conducted a network-independent test.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "Make-Section1-Step15.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Additional Steps") {
+        It's an additional step from here.
+
+        @ContentAndMedia(layout: horizontal) {
+                        
+        }
+        
+        @Steps {
+            @Step {
+                It should be possible to turn over the completionHandler for not only one case but also for a variety of cases.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step16.swift")
+            }
+            
+            @Step {
+                First, create a Boolean type of property called isRequestSuccessful. When initalizing objects of this type, it allows them to pass different responses depending on the state.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step17.swift")
+            }
+            
+            @Step {
+                It also creates HTTP URLResponse in case of failure.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step18.swift")
+            }
+            
+            @Step {
+                Divide the successful and unsuccessful cases by assigning the completionHandler for each situation to the runWhenResumeDidCall closure.
+                
+                @Code(name: "Mock.swift", file: "Make-Section1-Step19.swift")
+            }
+            
+            @Step {
+                Create each test method if successful and unsuccessful.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "Make-Section1-Step20.swift")
+            }
+            
+            @Step {
+                Write whether the request was successful when you created MockURLSession.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "Make-Section1-Step21.swift")
+            }
+            
+            @Step {
+                Paradoxically, we have to make sure that the test passes if the result is '.failure'. Therefore, add expectation.full() to the '.failure' and XCTFail() to the '.success'.
+                
+                Perfect! Now, learn more in the direction you want.
+                
+                @Code(name: "NetworkTestTutorialTests.swift", file: "Make-Section1-Step22.swift")
+            }
+        }
+    }
+}
